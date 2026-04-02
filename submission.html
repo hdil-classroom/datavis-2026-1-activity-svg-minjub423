@@ -12,26 +12,88 @@
 		}
 
 		#visualization-activity {
-			width: 600px;
+			width: 850px;
 			height: 500px;
 		}
 
 		/* YOUR CSS CODE WILL GO HERE */
+		.axis {
+            stroke: #cccccc;
+            stroke-width: 2;
+        }
 
+        .label-text {
+            font-size: 12px;
+            fill: #333333;
+        }
+        .axis-title {
+            font-size: 18px;
+            font-weight: bold;
+        }
 
+        .line1 { fill: #0052A4; } /* 1호선 */
+        .line2 { fill: #00A84D; } /* 2호선 */
+        .line3 { fill: #EF7C1C; } /* 3호선 */
+
+        .legend-text { font-size: 14px; }
 	</style>
 </head>
 
 <body>
 	<h1 id="header-title">
-		In-Class Acitivity by REPLACE_WITH_YOUR_NAME
+		In-Class Acitivity by Minju Byun
 	</h1>
 
 	<svg id="visualization-activity">
 		<!-- YOUR SVG CODE WILL GO HERE -->
+		<g id="axes">
+            <line x1="80" y1="50" x2="80" y2="400" class="axis" /> <line x1="80" y1="400" x2="650" y2="400" class="axis" /> </g>
 
+        <g id="y-labels" text-anchor="end">
+            <text x="75" y="405" class="label-text">0</text>
+            <text x="75" y="360" class="label-text">10,000</text>
+            <text x="75" y="315" class="label-text">20,000</text>
+            <text x="75" y="270" class="label-text">30,000</text>
+            <text x="75" y="225" class="label-text">40,000</text>
+            <text x="75" y="180" class="label-text">50,000</text>
+            <text x="75" y="135" class="label-text">60,000</text>
+            <text x="75" y="90" class="label-text">70,000</text>
+            <text x="75" y="45" class="label-text">80,000</text>
+            <text x="60" y="225" class="axis-title" transform="rotate(-90, 30, 225)">Entry Count</text>
+        </g>
 
+        <g id="bars">
+            <rect x="100" y="81" width="60" height="319" class="line2" />
+            <text x="130" y="415" text-anchor="middle" class="label-text">홍대입구</text>
+
+            <rect x="180" y="124" width="60" height="276" class="line2" />
+            <text x="210" y="415" text-anchor="middle" class="label-text">잠실</text>
+
+            <rect x="260" y="165" width="60" height="235" class="line3" />
+            <text x="290" y="415" text-anchor="middle" class="label-text">고속터미널</text>
+
+            <rect x="340" y="222" width="60" height="178" class="line1" />
+            <text x="370" y="415" text-anchor="middle" class="label-text">서울역</text>
+
+            <rect x="420" y="232" width="60" height="168" class="line2" />
+            <text x="450" y="415" text-anchor="middle" class="label-text">신림</text>
+
+            <rect x="500" y="235" width="60" height="165" class="line2" />
+            <text x="530" y="415" text-anchor="middle" class="label-text">신도림</text>
+        </g>
+
+        <text x="365" y="450" text-anchor="middle" class="axis-title">Station Name</text>
+
+        <g id="legend" transform="translate(700, 80)">
+            <rect x="0" y="0" width="15" height="15" class="line1" />
+            <text x="20" y="13" class="legend-text">Line 1</text>
+            
+            <rect x="0" y="25" width="15" height="15" class="line2" />
+            <text x="20" y="38" class="legend-text">Line 2</text>
+            
+            <rect x="0" y="50" width="15" height="15" class="line3" />
+            <text x="20" y="63" class="legend-text">Line 3</text>
+        </g>
 	</svg>
-
 </body>
 </html>
